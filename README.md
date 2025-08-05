@@ -1,22 +1,22 @@
-## Weak-SINDy Compression Project
+# Weak-SINDy Compression Project
 
 This project implements Streaming Weak-SINDy Compression for high-dimensional time-series data. It is designed to support the compression of scientific simulation data using Proper Orthogonal Decomposition (POD) and sparse identification of nonlinear dynamics (SINDy) in a streaming (memory-efficient) fashion.
 
 ⸻
 
-# Project Structure
+## Project Structure
 
-Weak_sindy_compression/
-├── src/
-│   └── Reduction_with_POD/
-│       └── Sample_Data.py      # Core logic for loading data and performing POD
-├── sample_data.csv            # Input dataset (n variables × m time steps)
-└── README.md                  # Project documentation
+    Weak_sindy_compression/
+    ├── src/
+    │   └── Reduction_with_POD/
+    │       └── Sample_Data.py      # Core logic for loading data and performing POD
+    ├── sample_data.csv            # Input dataset (n variables × m time steps)
+    └── README.md                  # Project documentation
 
 
 ⸻
 
-# Modules
+## Modules
 
 Sample_Data.py
 
@@ -28,14 +28,16 @@ This module defines a class SampleData which:
 
 ⸻
 
-# Mathematical Foundation
+## Mathematical Foundation
 
 Dimensionality Reduction via POD
 
-Given snapshot data matrix A \in \mathbb{R}^{n \times m}:
-	•	Compute AA^T
-	•	Perform SVD: A = U \Sigma V^T
-	•	Truncate top r modes: A \approx U_r \Sigma_r V_r^T
+Given snapshot data matrix 
+    A \in \mathbb{R}^{n \times m}:
+	    
+        •	Compute AA^T
+	    •	Perform SVD: A = U \Sigma V^T
+	    •	Truncate top r modes: A \approx U_r \Sigma_r V_r^T
 
 Weak Form SINDy
 	•	Transforms \frac{d\mathbf{a}}{dt} = f(\mathbf{a}) into an integral formulation
@@ -44,14 +46,7 @@ Weak Form SINDy
 
 ⸻
 
-Goals
-	•	✔️ Build robust and reusable dimensionality reduction code
-	•	✔️ Support weak form integration via symbolic time functions
-	•	✔️ Enable streaming model updates for compression efficiency
-
-⸻
-
-# Getting Started
+## Getting Started
 
 Prerequisites
 	•	Python 3.8+
@@ -65,7 +60,7 @@ Ensure your sample_data.csv is formatted with rows as variables and columns as t
 
 ⸻
 
-# Roadmap
+## Roadmap
 	•	Integrate symbolic test functions \psi(t)
 	•	Construct feature library \Theta(\mathbf{a})
 	•	Implement streaming regression update logic
@@ -73,7 +68,7 @@ Ensure your sample_data.csv is formatted with rows as variables and columns as t
 
 ⸻
 
-# References
+## References
 	•	Russo et al., Streaming Compression of Scientific Data via Weak-SINDy, arXiv:2308.14962
 
 ⸻
